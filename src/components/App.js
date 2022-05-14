@@ -8,7 +8,7 @@ export default function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/home-page' element={<HomePage />} />
+				<Route path='' element={<HomePage />} />
 				<Route path='/flashcards' element={<Flashcards />} />
 			</Routes>
 		</BrowserRouter>

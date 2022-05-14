@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&family=Righteous&family=Roboto&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+* {
+	box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+	font-family: 'Recursive', sans-serif;
+	background-color: #fb6b6b;
+	border: 1px solid #dbdbdb;
+}
+
+.home-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.home-page img {
+	width: 136px;
+	height: 161px;
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-family: 'Righteous', cursive;
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 45px;
+	letter-spacing: -0.012em;
+	color: #ffffff;
+}
+
+.btn-homepage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 246px;
+	height: 54px;
+	background: #ffffff;
+	border: 1px solid #d70900;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 5px;
+	margin-top: 37px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	color: #d70900;
+}
+
+.btn-homepage:hover {
+  filter: brightness(90%);
+}
