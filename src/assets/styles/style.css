@@ -217,19 +217,22 @@ header img {
 	color: #2fbe34;
 }
 
-.front-card-answered.red .icon {
+.icon-red {
 	font-size: 20px;
 	color: #ff3030;
+	margin: 0 2px;
 }
 
-.front-card-answered.yellow .icon {
+.icon-yellow {
 	font-size: 20px;
 	color: #ff922e;
+	margin: 0 2px;
 }
 
-.front-card-answered.green .icon {
+.icon-green {
 	font-size: 20px;
 	color: #2fbe34;
+	margin: 0 2px;
 }
 
 footer {

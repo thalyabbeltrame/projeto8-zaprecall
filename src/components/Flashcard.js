@@ -3,15 +3,21 @@ import { IoPlayOutline } from 'react-icons/io5';
 import { TiArrowLoop } from 'react-icons/ti';
 import IconAnswer from './IconAnswer';
 
-export default function Flashcard({ question, answer, numQuestion, numQuestionsAnswered, setNumQuestionsAnswered }) {
+export default function Flashcard({
+	question,
+	answer,
+	numQuestion,
+	answersArray,
+	setAnswersArray,
+}) {
 	const [cardState, setCardState] = useState('front-card');
-  const [questionState, setQuestionState] = useState('');
+	const [questionState, setQuestionState] = useState('');
 
-  function showCardResult(color) {
-    setCardState('front-card-answered');
-    setNumQuestionsAnswered(numQuestionsAnswered + 1);
-    setQuestionState(color);
-  }
+	function showCardResult(color) {
+		setCardState('front-card-answered');
+    setAnswersArray([...answersArray, color]);
+		setQuestionState(color);
+	}
 
 	const frontCard = (
 		<div className='front-card'>
@@ -31,19 +37,31 @@ export default function Flashcard({ question, answer, numQuestion, numQuestionsA
 		<div className='answer-card'>
 			<h2>{answer}</h2>
 			<div className='buttons'>
-				<button className='btn-red' onClick={() => showCardResult('red')}>Não lembrei</button>
-				<button className='btn-yellow' onClick={() => showCardResult('yellow')}>Quase não lembrei</button>
-				<button className='btn-green' onClick={() => showCardResult('green')}>Zap!</button>
+				<button className='btn-red' onClick={() => showCardResult('red')}>
+					Não lembrei
+				</button>
+				<button className='btn-yellow' onClick={() => showCardResult('yellow')}>
+					Quase não lembrei
+				</button>
+				<button className='btn-green' onClick={() => showCardResult('green')}>
+					Zap!
+				</button>
 			</div>
 		</div>
 	);
 
-  const frontCardAnswered = (
+	const frontCardAnswered = (
 		<div className={`front-card-answered ${questionState}`}>
 			<h2>{`Pergunta ${numQuestion}`}</h2>
-      <IconAnswer buttonType={questionState}/>
+			<IconAnswer buttonType={questionState} />
 		</div>
 	);
 
-	return (cardState === 'front-card') ? frontCard : (cardState === 'question-card') ? questionCard : (cardState === 'answer-card') ? answerCard : frontCardAnswered;
+	return cardState === 'front-card'
+		? frontCard
+		: cardState === 'question-card'
+		? questionCard
+		: cardState === 'answer-card'
+		? answerCard
+		: frontCardAnswered;
 }

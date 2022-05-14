@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import Flashcard from './Flashcard';
 import Footer from './Footer';
+import IconAnswer from './IconAnswer';
 import logo from '../assets/images/logo.png';
 
 export default function GamePage({ flashcards }) {
-	const [numQuestionsAnswered, setNumQuestionsAnswered] = useState(0);
+	const [answersArray, setAnswersArray] = useState([]);
 
 	return (
 		<section className='game-page'>
@@ -19,13 +20,20 @@ export default function GamePage({ flashcards }) {
 						question={card.question}
 						answer={card.answer}
 						numQuestion={index + 1}
-						numQuestionsAnswered={numQuestionsAnswered}
-						setNumQuestionsAnswered={setNumQuestionsAnswered}
+						answersArray={answersArray}
+						setAnswersArray={setAnswersArray}
 					/>
 				))}
 			</div>
 			<Footer>
-				{numQuestionsAnswered}/{flashcards.length} CONCLUÍDOS
+				<h3>
+					{answersArray.length}/{flashcards.length} CONCLUÍDOS
+				</h3>
+				<div className='footer-icons'>
+					{answersArray.map((answer, index) => (
+						<IconAnswer key={index} buttonType={answer} />
+					))}
+				</div>
 			</Footer>
 		</section>
 	);
