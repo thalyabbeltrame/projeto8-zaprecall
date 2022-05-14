@@ -3,13 +3,13 @@
 
 * {
 	box-sizing: border-box;
-  text-decoration: none;
+	text-decoration: none;
 }
 
 body {
 	font-family: 'Recursive', sans-serif;
 	background-color: #fb6b6b;
-	border: 1px solid #dbdbdb;
+	/* border: 1px solid #dbdbdb; */
 }
 
 .home-page {
@@ -53,5 +53,56 @@ h1 {
 }
 
 .btn-homepage:hover {
-  filter: brightness(90%);
+	filter: brightness(90%);
+}
+
+.game-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 42px 0;
+}
+
+header img {
+	width: 52px;
+	height: 60px;
+	margin-right: 30px;
+}
+.flashcards {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.flashcard {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 300px;
+	background: #ffffff;
+	box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+	border-radius: 5px;
+	margin-bottom: 25px;
+	padding: 20px 15px;
+}
+
+.flashcard h2 {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 19px;
+	color: #333333;
+}
+
+.icon-front {
+	color: #333333;
+	font-size: 30px;
 }

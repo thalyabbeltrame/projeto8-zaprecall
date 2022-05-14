@@ -6,7 +6,7 @@ export default function HomePage() {
 		<section className='home-page'>
 			<img src={logo} alt='Logo ZapRecall' />
 			<h1>ZapRecall</h1>
-			<Link className='btn-homepage' to='/flashcards'>
+			<Link className='btn-homepage' to='/game-page'>
 				Iniciar Recall
 			</Link>
 		</section>

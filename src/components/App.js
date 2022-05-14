@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
-import Flashcards from './Flashcards';
+import GamePage from './GamePage';
 import '../assets/styles/reset.css';
 import '../assets/styles/style.css';
 
@@ -9,7 +9,7 @@ export default function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path='' element={<HomePage />} />
-				<Route path='/flashcards' element={<Flashcards />} />
+				<Route path='/game-page' element={<GamePage />} />
 			</Routes>
 		</BrowserRouter>
 	);
