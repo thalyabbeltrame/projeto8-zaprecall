@@ -5,19 +5,19 @@ import {
 } from "react-icons/bs";
 
 export default function IconAnswer({ buttonType }) {
-  let icon = '';
+  let iconAnswer = '';
   switch (buttonType) {
     case 'red':
-      icon = (<BsFillXCircleFill className={`icon-${buttonType}`} />);
+      iconAnswer = (<BsFillXCircleFill className={`icon-${buttonType}`} />);
       break;
     case 'yellow':
-      icon = (<BsQuestionCircleFill className={`icon-${buttonType}`} />);
+      iconAnswer = (<BsQuestionCircleFill className={`icon-${buttonType}`} />);
       break;
     case 'green':
-      icon = (<BsCheckCircleFill className={`icon-${buttonType}`} />);
+      iconAnswer = (<BsCheckCircleFill className={`icon-${buttonType}`} />);
       break;
     default:
       break;
   }
-  return icon;
+  return iconAnswer;
 }

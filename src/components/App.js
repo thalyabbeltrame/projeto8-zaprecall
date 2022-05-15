@@ -52,7 +52,7 @@ export default function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='' element={<HomePage startGame={startGame}/>} />
+				<Route path='/' element={<HomePage startGame={startGame}/>} />
 				<Route path='/game-page' element={<GamePage flashcards={flashcards}/>} />
 			</Routes>
 		</BrowserRouter>
