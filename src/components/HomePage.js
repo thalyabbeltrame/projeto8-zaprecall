@@ -16,7 +16,7 @@ export default function HomePage({ startGame, flashcards, goal, setGoal }) {
 					Iniciar Recall
 				</Link>
 			) : (
-				<Link className='btn-homepage inactive' to='/' onClick={startGame}>
+				<Link className='btn-homepage inactive' to='/'>
 					Iniciar Recall
 				</Link>
 			)}

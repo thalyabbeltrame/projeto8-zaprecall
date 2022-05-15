@@ -83,6 +83,7 @@ h1 {
 	font-size: 18px;
 	line-height: 22px;
 	color: #c0c0c0;
+	cursor: auto;
 }
 
 .game-page {
@@ -326,4 +327,20 @@ footer.expanded {
 
 .btn-restart:hover {
 	filter: brightness(90%);
+}
+
+@media screen and (min-width: 614px) {
+	.front-card,
+	.front-card-answered {
+		width: 567.12px;
+	}
+
+	.question-card,
+	.answer-card {
+		width: 567.12px;
+	}
+
+	.answer-card .buttons button {
+		width: 175px;
+	}
 }
