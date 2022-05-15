@@ -141,7 +141,7 @@ header img {
 	font-size: 30px;
 }
 
-.question-card {
+.card-question {
 	width: 299px;
 	height: 131px;
 	background: #ffffd5;
@@ -152,15 +152,15 @@ header img {
 	position: relative;
 }
 
-.question-card h2,
-.answer-card h2 {
+.card-question h2,
+.card-answer h2 {
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 22px;
 	color: #333333;
 }
 
-.question-card .icon {
+.card-question .icon {
 	color: #333333;
 	font-size: 30px;
 	position: absolute;
@@ -168,7 +168,7 @@ header img {
 	bottom: 10px;
 }
 
-.answer-card {
+.card-answer {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -181,13 +181,13 @@ header img {
 	padding: 10px;
 }
 
-.answer-card .buttons {
+.card-answer .buttons {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.answer-card .buttons button {
+.card-answer .buttons button {
 	width: 85.17px;
 	height: 37.17px;
 	border-radius: 5px;
@@ -199,7 +199,7 @@ header img {
 	cursor: pointer;
 }
 
-.answer-card .buttons button:hover {
+.card-answer .buttons button:hover {
 	filter: brightness(90%);
 }
 
@@ -215,7 +215,7 @@ header img {
 	background-color: #2fbe34;
 }
 
-.front-card-answered {
+.front-answered-card {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -232,17 +232,17 @@ header img {
 	line-height: 19px;
 }
 
-.front-card-answered.red h2 {
+.front-answered-card.red h2 {
 	text-decoration-line: line-through;
 	color: #ff3030;
 }
 
-.front-card-answered.yellow h2 {
+.front-answered-card.yellow h2 {
 	text-decoration-line: line-through;
 	color: #ff922e;
 }
 
-.front-card-answered.green h2 {
+.front-answered-card.green h2 {
 	text-decoration-line: line-through;
 	color: #2fbe34;
 }
@@ -331,16 +331,16 @@ footer.expanded {
 
 @media screen and (min-width: 614px) {
 	.front-card,
-	.front-card-answered {
+	.front-answered-card {
 		width: 567.12px;
 	}
 
-	.question-card,
-	.answer-card {
+	.card-question,
+	.card-answer {
 		width: 567.12px;
 	}
 
-	.answer-card .buttons button {
+	.card-answer .buttons button {
 		width: 175px;
 	}
 }

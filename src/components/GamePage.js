@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import Flashcard from './Flashcard';
 import Footer from './Footer';
-
 import logo from '../assets/images/logo.png';
 
-export default function GamePage({ flashcards, goal }) {
-	const [answersArray, setAnswersArray] = useState([]);
+export default function GamePage({ flashcards, goal, setGoal }) {
+	const [answersList, setAnswersList] = useState([]);
 
 	return (
 		<section className='game-page'>
@@ -20,12 +19,12 @@ export default function GamePage({ flashcards, goal }) {
 						question={card.question}
 						answer={card.answer}
 						numQuestion={index + 1}
-						answersArray={answersArray}
-						setAnswersArray={setAnswersArray}
+						answersList={answersList}
+						setAnswersList={setAnswersList}
 					/>
 				))}
 			</div>
-			<Footer answersArray={answersArray} numFlashcards={flashcards.length} goal={goal} />
+			<Footer answersList={answersList} numFlashcards={flashcards.length} goal={goal} setGoal={setGoal} />
 		</section>
 	);
 }

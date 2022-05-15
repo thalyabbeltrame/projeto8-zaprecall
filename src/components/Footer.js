@@ -3,8 +3,8 @@ import party from '../assets/images/party-emoji.png';
 import sad from '../assets/images/sad-emoji.png';
 import IconAnswer from './IconAnswer';
 
-export default function Footer({ answersArray, numFlashcards, goal }) {
-	const allAnswered = answersArray.length === numFlashcards;
+export default function Footer({ answersList, numFlashcards, goal, setGoal }) {
+	const allAnswered = answersList.length === numFlashcards;
 
 	const success = (
 		<>
@@ -12,7 +12,7 @@ export default function Footer({ answersArray, numFlashcards, goal }) {
 				<img src={party} alt='Party emoji' />
 				<h3>Parabéns!</h3>
 			</div>
-			<h4>Você não esqueceu de nenhum flashcard!</h4>
+			<h4>Você atingiu a sua meta de {goal} flashcard(s)!</h4>
 		</>
 	);
 
@@ -22,14 +22,14 @@ export default function Footer({ answersArray, numFlashcards, goal }) {
 				<img src={sad} alt='Sad emoji' />
 				<h3>Putz...</h3>
 			</div>
-			<h4>Ainda faltam alguns... Mas não desanime!</h4>
+			<h4>Ainda faltam alguns para você atingir sua meta... Mas não desanime!</h4>
 		</>
 	);
 
 	return (
 		<footer className={allAnswered ? 'expanded' : ''}>
 			{allAnswered ? (
-				answersArray.filter((answer) => answer === 'yellow' || answer === 'green').length >= goal ? (
+				answersList.filter((answer) => answer === 'yellow' || answer === 'green').length >= goal ? (
 					success
 				) : (
 					failure
@@ -38,15 +38,15 @@ export default function Footer({ answersArray, numFlashcards, goal }) {
 				<></>
 			)}
 			<h3>
-				{answersArray.length}/{numFlashcards} CONCLUÍDOS
+				{answersList.length}/{numFlashcards} CONCLUÍDOS
 			</h3>
 			<div className='footer-icons'>
-				{answersArray.map((answer, index) => (
+				{answersList.map((answer, index) => (
 					<IconAnswer key={index} buttonType={answer} />
 				))}
 			</div>
 			{allAnswered ? (
-				<Link className='btn-restart' to='/'>
+				<Link className='btn-restart' to='/' onClick={() => setGoal(0)}>
 					REINICIAR RECALL
 				</Link>
 			) : (
