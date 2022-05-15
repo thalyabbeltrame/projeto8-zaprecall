@@ -3,19 +3,13 @@ import { IoPlayOutline } from 'react-icons/io5';
 import { TiArrowLoop } from 'react-icons/ti';
 import IconAnswer from './IconAnswer';
 
-export default function Flashcard({
-	question,
-	answer,
-	numQuestion,
-	answersArray,
-	setAnswersArray,
-}) {
+export default function Flashcard({ question, answer, numQuestion, answersArray, setAnswersArray }) {
 	const [cardState, setCardState] = useState('front-card');
 	const [questionState, setQuestionState] = useState('');
 
 	function showCardResult(color) {
 		setCardState('front-card-answered');
-    setAnswersArray([...answersArray, color]);
+		setAnswersArray([...answersArray, color]);
 		setQuestionState(color);
 	}
 

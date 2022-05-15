@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 import logo from '../assets/images/logo.png';
 
-export default function GamePage({ flashcards }) {
+export default function GamePage({ flashcards, goal }) {
 	const [answersArray, setAnswersArray] = useState([]);
 
 	return (
@@ -25,7 +25,7 @@ export default function GamePage({ flashcards }) {
 					/>
 				))}
 			</div>
-			<Footer answersArray={answersArray} numFlashcards={flashcards.length} />
+			<Footer answersArray={answersArray} numFlashcards={flashcards.length} goal={goal} />
 		</section>
 	);
 }

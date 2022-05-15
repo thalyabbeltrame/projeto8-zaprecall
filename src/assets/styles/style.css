@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&family=Righteous&family=Roboto&display=swap');
-/* font-family: 'Roboto', sans-serif; */
 
 * {
 	box-sizing: border-box;
@@ -35,7 +34,22 @@ h1 {
 	color: #ffffff;
 }
 
-.btn-homepage {
+.home-page input {
+	font-family: 'Roboto', sans-serif;
+	width: 246px;
+	height: 43px;
+	background: #ffffff;
+	border: none;
+	padding-left: 10px;
+	border-radius: 5px;
+	margin-top: 36px;
+}
+
+.home-page input:focus {
+	outline: 0;
+}
+
+.btn-homepage.active {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -45,15 +59,30 @@ h1 {
 	border: 1px solid #d70900;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	border-radius: 5px;
-	margin-top: 37px;
+	margin-top: 18px;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 22px;
 	color: #d70900;
 }
 
-.btn-homepage:hover {
+.btn-homepage.active:hover {
 	filter: brightness(90%);
+}
+
+.btn-homepage.inactive {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 246px;
+	height: 54px;
+	background: #e8e8e8;
+	border-radius: 5px;
+	margin-top: 18px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	color: #c0c0c0;
 }
 
 .game-page {

@@ -6,7 +6,6 @@ import '../assets/styles/reset.css';
 import '../assets/styles/style.css';
 
 export default function App() {
-
 	const cards = [
 		{
 			question: 'O que é JSX?',
@@ -43,6 +42,7 @@ export default function App() {
 	];
 
 	const [flashcards, setFlashcards] = useState(cards);
+	const [goal, setGoal] = useState(0);
 	const comparator = () => Math.random() - 0.5;
 
 	function startGame() {
@@ -52,8 +52,18 @@ export default function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<HomePage startGame={startGame}/>} />
-				<Route path='/game-page' element={<GamePage flashcards={flashcards}/>} />
+				<Route
+					path='/'
+					element={
+						<HomePage
+							startGame={startGame}
+							flashcards={flashcards}
+							goal={goal}
+							setGoal={setGoal}
+						/>
+					}
+				/>
+				<Route path='/game-page' element={<GamePage flashcards={flashcards} goal={goal} />} />
 			</Routes>
 		</BrowserRouter>
 	);

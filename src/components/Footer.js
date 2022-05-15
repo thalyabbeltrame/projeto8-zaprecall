@@ -3,10 +3,10 @@ import party from '../assets/images/party-emoji.png';
 import sad from '../assets/images/sad-emoji.png';
 import IconAnswer from './IconAnswer';
 
-export default function Footer({ answersArray, numFlashcards }) {
+export default function Footer({ answersArray, numFlashcards, goal }) {
 	const allAnswered = answersArray.length === numFlashcards;
 
-	const withoutRedAnswer = (
+	const success = (
 		<>
 			<div className='footer-title'>
 				<img src={party} alt='Party emoji' />
@@ -16,7 +16,7 @@ export default function Footer({ answersArray, numFlashcards }) {
 		</>
 	);
 
-	const withRedAnswer = (
+	const failure = (
 		<>
 			<div className='footer-title'>
 				<img src={sad} alt='Sad emoji' />
@@ -28,7 +28,15 @@ export default function Footer({ answersArray, numFlashcards }) {
 
 	return (
 		<footer className={allAnswered ? 'expanded' : ''}>
-			{allAnswered ? answersArray.some((answer) => answer === 'red') ? withRedAnswer : withoutRedAnswer : <></>}
+			{allAnswered ? (
+				answersArray.filter((answer) => answer === 'yellow' || answer === 'green').length >= goal ? (
+					success
+				) : (
+					failure
+				)
+			) : (
+				<></>
+			)}
 			<h3>
 				{answersArray.length}/{numFlashcards} CONCLUÍDOS
 			</h3>
@@ -37,7 +45,13 @@ export default function Footer({ answersArray, numFlashcards }) {
 					<IconAnswer key={index} buttonType={answer} />
 				))}
 			</div>
-			{allAnswered ? <Link className='btn-restart' to='/'>REINICIAR RECALL</Link> : <></>}
+			{allAnswered ? (
+				<Link className='btn-restart' to='/'>
+					REINICIAR RECALL
+				</Link>
+			) : (
+				<></>
+			)}
 		</footer>
 	);
 }
