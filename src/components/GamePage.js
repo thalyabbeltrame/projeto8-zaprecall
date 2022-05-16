@@ -12,7 +12,7 @@ export default function GamePage({ flashcards, goal, setGoal }) {
 				<img src={logo} alt='Logo ZapRecall' />
 				<h1>ZapRecall</h1>
 			</header>
-			<div className='flashcards'>
+			<div className={`flashcards ${flashcards.length === answersList.length ? 'expanded' : ''}`}>
 				{flashcards.map((card, index) => (
 					<Flashcard
 						key={index}
